@@ -88,8 +88,15 @@
         />
       </div>
       <div
-        class="max-w-4xl sm:max-w-2xl mx-auto text-white text-center p-2 rounded-md break-all"
-        style="background: #171717; width: fit-content; word-break: break-all;"
+        class="
+          max-w-4xl
+          mx-auto
+          text-white text-center
+          p-2
+          rounded-md
+          break-all
+        "
+        style="background: #171717; width: fit-content; word-break: break-all"
       >
         <span class="text-red-200">const</span>
         <span class="text-green-200">posts</span>
@@ -102,17 +109,68 @@
       <h2 class="mx-auto text-center font-semibold mt-7 text-2xl">
         <mark class="greenMark px-4">Frequently Asked Questions</mark>
       </h2>
-      <p class="text-sm max-w-4xl mt-3 mx-auto text-center mb-5">
+      <div class="max-w-4xl mx-auto grid grid-cols-2 mt-5 gap-5">
+        <div class="mb-4 text-center">
+          <strong>What is Deta Space?</strong><br />Berowra is built to run on
+          Deta, a serverless cloud hosting provided. Deta Space is an
+          abstraction of this cloud hosting which allows individuals to install
+          private apps it their own personal cloud. Read more
+          <a href="https://deta.space" class="italic hover:underline">here</a>.
+        </div>
+        <div class="mb-4 text-center">
+          <strong>What types of data are supported?</strong><br />Berowra
+          supports short strings, numbers, longer strings with markdown, dates,
+          string arrays, files and colours at the moment.
+        </div>
+        <div class="mb-4 text-center">
+          <strong>What is the storage limit of Berowra?</strong><br />Deta Space
+          limits each app to 10GB of files stored, this is therefore Berowra's
+          limit.
+        </div>
+        <div class="mb-4 text-center">
+          <strong
+            >Where can I provided feedback, request features, or report
+            issues?</strong
+          ><br />Please use our
+          <a
+            href="https://github.com/sampoder/berowra/issues"
+            class="italic hover:underline"
+            >GitHub issues</a
+          >.
+        </div>
+      </div>
+
+      <div class="mt-3 mx-auto flex w-full justify-center mb-6">
+        <div
+          class="
+            py-2
+            px-3
+            rounded-md
+            text-gray-100
+            focus:border-blue-300
+            focus:ring
+            focus:ring-blue-200
+            focus:ring-opacity-50
+            text-left
+            bg-purple-600
+            cursor-pointer
+          "
+          style="width: fit-content"
+        >
+          Launch Berowra on Deta Space For Free
+        </div>
+      </div>
+      <p
+        class="text-sm max-w-4xl mt-5 mx-auto text-center mb-3 border-t-2 pt-2"
+      >
         Built by
-        <a
-          href="https://github.com/sampoder"
-          class="hover:underline font-semibold"
+        <a href="https://github.com/sampoder" class="hover:underline italic"
           >@sampoder</a
         >
         and open sourced
         <a
           href="https://github.com/sampoder/berowra"
-          class="hover:underline font-semibold"
+          class="hover:underline italic"
           >here</a
         >. I acknowledge the traditional owners of the namesake land area,
         Berowra, and pay our respects to elders past, present and emerging.
