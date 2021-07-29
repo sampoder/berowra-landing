@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/github", "destination": "https://github.com/sampoder/berowra" },
+    { "source": "/install", "destination": "https://deta.space/discovery/berowra" }
+  ]
+}
