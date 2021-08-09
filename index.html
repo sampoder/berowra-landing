@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="tailwind.css" />
+    <link rel="stylesheet" href="tailwind-dev.css" />
     <style>
       html {
         font-family: Roboto Mono, Menlo, monospace;
@@ -55,8 +56,8 @@
           Meet Berowra
         </h1>
         <p class="text-lg max-w-4xl mt-3 mx-auto text-center">
-          With Berowra you can get a CMS <mark>up in a minute</mark>, not
-          a day. Through Deta Space, Berowra gives you the
+          With Berowra you can get a CMS <mark>up in a minute</mark>, not a day.
+          Through Deta Space, Berowra gives you the
           <mark>control of self hosting</mark> without any need for
           infrastructure maintenance. It's easy to use, flexible and
           <mark>completely free</mark>.
@@ -117,47 +118,55 @@
       <h2 class="mx-auto text-center font-semibold mt-7 text-2xl">
         <mark class="blueMark px-4">This is how easy using Berowra is:</mark>
       </h2>
+      <div class="max-w-3xl mx-auto mt-3 text-center">
+        <p class="px-10 mt-5 text-sm" id='currentCaption'>
+          1) For each collection, we need to define a template for the content.
+        </p>
+        <img
+          id="currentImage"
+          src="https://cloud-cusao41w8-hack-club-bot.vercel.app/2screenshot_2021-07-24_at_12.48.29_pm.png"
+        />
+      </div>
       <div
-        class="
-          max-w-4xl
-          mx-auto
-          grid grid-cols-1
-          sm:grid-cols-2
-          mt-3
-          text-center
-        "
+        class="max-w-2xl mx-auto grid grid-cols-4 sm:grid-cols-4 text-center"
+        style="margin-top: -10px"
       >
         <div>
           <img
+            class=""
+            onclick="setImage(0)"
+            id="0-mini"
             src="https://cloud-cusao41w8-hack-club-bot.vercel.app/2screenshot_2021-07-24_at_12.48.29_pm.png"
           />
-          <p class="px-10 mb-3 text-sm">
-            Every piece of content lives in a collection, let's create one.
-          </p>
         </div>
         <div>
           <img
+            class="unselectedMiniImage"
+            onclick="setImage(1)"
+            id="1-mini"
             src="https://cloud-cusao41w8-hack-club-bot.vercel.app/1screenshot_2021-07-24_at_12.49.06_pm.png"
           />
-
-          <p class="px-10 mb-3 text-sm">
-            For each collection, we need to define a template for the content.
-          </p>
         </div>
         <div>
           <img
+            class="unselectedMiniImage"
+            onclick="setImage(2)"
+            id="2-mini"
             src="https://cloud-cusao41w8-hack-club-bot.vercel.app/3screenshot_2021-07-24_at_1.04.53_pm.png"
           />
-          <p class="px-10 mb-3 text-sm">Let's now create a piece of content.</p>
         </div>
         <div>
-        <img
-          src="https://cloud-cusao41w8-hack-club-bot.vercel.app/0screenshot_2021-07-24_at_12.53.23_pm.png"
-        />
-        <p class="px-10 mb-3 text-sm">Lastly, we need to fill out the template.</p>
+          <img
+            class="unselectedMiniImage"
+            onclick="setImage(3)"
+            id="3-mini"
+            src="https://cloud-cusao41w8-hack-club-bot.vercel.app/0screenshot_2021-07-24_at_12.53.23_pm.png"
+          />
         </div>
       </div>
-      <p class="px-10 mt-3 text-sm text-center">Now, we can fetch our content by making a request to:</p>
+      <p class="px-10 mt-7 text-sm text-center">
+        Finally, we can fetch our content by making a request to:
+      </p>
       <div
         class="
           max-w-4xl
@@ -185,10 +194,9 @@
       </h2>
       <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 mt-5 gap-5">
         <div class="mb-4 text-center">
-          <strong>What is Deta Space?</strong><br />Berowra is built to run on
-          Deta, a serverless cloud hosting provided. Deta Space is an
-          abstraction of this cloud hosting which allows individuals to install
-          private apps it their own personal cloud. Read more
+          <strong>What is Deta Space?</strong><br />Deta Space enables
+          individuals ro create private instances of web apps in their own
+          'personal cloud'. Read more
           <a href="https://deta.space" class="italic hover:underline">here</a>.
         </div>
         <div class="mb-4 text-center">
@@ -198,8 +206,8 @@
         </div>
         <div class="mb-4 text-center">
           <strong>What is the storage limit of Berowra?</strong><br />Deta Space
-          limits each app to 10GB of files stored, this is therefore Berowra's
-          limit.
+          currently limits each user to 10GB of files, this is therefore
+          Berowra's limit.
         </div>
         <div class="mb-4 text-center">
           <strong
@@ -291,5 +299,52 @@
         rgba(147, 255, 139, 0.1)
       );
     }
+
+    .unselectedMiniImage {
+      transform: scale(0.92);
+    }
   </style>
+  <script>
+    let images = [
+      {
+        image:
+          "https://cloud-cusao41w8-hack-club-bot.vercel.app/2screenshot_2021-07-24_at_12.48.29_pm.png",
+        caption:
+          "1) Every piece of content lives in a collection, let's create one.",
+      },
+      {
+        image:
+          "https://cloud-cusao41w8-hack-club-bot.vercel.app/1screenshot_2021-07-24_at_12.49.06_pm.png",
+        caption:
+          "2) For each collection, we need to define a template for the content.",
+      },
+      {
+        image:
+          "https://cloud-cusao41w8-hack-club-bot.vercel.app/3screenshot_2021-07-24_at_1.04.53_pm.png",
+        caption:
+          "3) Let's now create a piece of content.",
+      },
+      {
+        image:
+          "https://cloud-cusao41w8-hack-club-bot.vercel.app/0screenshot_2021-07-24_at_12.53.23_pm.png",
+        caption:
+          "4) We then need to fill out the template.",
+      },
+    ];
+
+    let current = 0
+    let clicked = false
+
+    function setImage(index, clicked = true){
+      console.log('ran!')
+      document.getElementById("currentImage").src = images[index].image;
+      document.getElementById("currentCaption").innerText = images[index].caption;
+      document.getElementById(`${current}-mini`).classList.remove("unselectedMiniImage");
+      document.getElementById(`${current}-mini`).classList.add("unselectedMiniImage");
+      document.getElementById(`${index}-mini`).classList.remove("unselectedMiniImage");
+      current = index
+    }
+    
+    setInterval(function(){ setImage(current == 3 ? 0 : current + 1, false); }, 3000);
+  </script>
 </html>
